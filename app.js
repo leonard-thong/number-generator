@@ -1,11 +1,13 @@
 const express = require('express');
 const app = express();
 
+const PORT = process.env.PORT || 3000;
+
 app.get('/random', (req, res) => {
   const randomNumber = Math.floor(Math.random() * 100);
   res.send({ number: randomNumber });
 });
 
-app.listen(3000, () => {
-  console.log('App listening on port 3000!');
+app.listen(PORT, () => {
+  console.log('App started');
 });
